@@ -66,6 +66,44 @@ services:
     networks:
       - cloudflow-network
 
+  kafka-ui:
+    image: ghcr.io/kafbat/kafka-ui:latest
+    container_name: cloudflow-kafka-ui
+    restart: unless-stopped
+
+    depends_on:
+      - kafka
+
+    ports:
+      - "${KAFKA_UI_PORT}:8080"
+
+    environment:
+      DYNAMIC_CONFIG_ENABLED: "true"
+      KAFKA_CLUSTERS_0_NAME: cloudflow-local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
+
+    networks:
+      - cloudflow-network
+
+  kafka-topic-init:
+    image: apache/kafka:${KAFKA_VERSION}
+
+    container_name: cloudflow-kafka-topic-init
+
+    depends_on:
+      kafka:
+        condition: service_started
+
+    volumes:
+      - ../kafka/create-topics.sh:/create-topics.sh:ro
+
+    entrypoint: ["/bin/bash", "/create-topics.sh"]
+
+    restart: "no"
+
+    networks:
+      - cloudflow-network
+
 volumes:
   postgres-data:
   kafka-data:
