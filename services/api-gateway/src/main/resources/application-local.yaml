@@ -1,0 +1,23 @@
+server:
+  port: 9000
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: always
+
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics, prometheus
+
+logging:
+  level:
+    root: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level [%X{correlationId}] %logger - %msg%n"
