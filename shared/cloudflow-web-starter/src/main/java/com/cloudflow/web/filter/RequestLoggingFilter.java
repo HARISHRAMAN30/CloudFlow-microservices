@@ -1,5 +1,6 @@
 package com.cloudflow.web.filter;
 
+import com.cloudflow.web.properties.WebProperties;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -11,6 +12,12 @@ import java.io.IOException;
 
 @Slf4j
 public class RequestLoggingFilter extends OncePerRequestFilter {
+
+    private final WebProperties webProperties;
+
+    public RequestLoggingFilter(WebProperties webProperties) {
+        this.webProperties = webProperties;
+    }
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {

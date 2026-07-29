@@ -1,5 +1,7 @@
 package com.cloudflow.api_gateway.controller;
 
+import com.cloudflow.common.exception.CloudFlowException;
+import com.cloudflow.common.exception.ErrorCode;
 import com.cloudflow.common.response.ApiResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,5 +26,10 @@ public class SystemController {
                                             "version", "1.0.0")
 
         );
+    }
+
+    @GetMapping("/error")
+    public String error() {
+        throw new CloudFlowException(ErrorCode.RESOURCE_NOT_FOUND);
     }
 }

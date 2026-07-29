@@ -4,3 +4,14 @@ spring:
 
   profiles:
     active: local
+
+cloudflow:
+  web:
+    correlation-id:
+      enabled: true
+    request-logging:
+      enabled: true
+    exclude-paths:
+      - /actuator/**
+      - /swagger-ui/**
+      - /v3/api-docs/**
