@@ -88,6 +88,16 @@
 			<artifactId>cloudflow-web-starter</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.cloudflow</groupId>
+			<artifactId>cloudflow-security-starter</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.cloudflow</groupId>
+			<artifactId>cloudflow-jwt-starter</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>

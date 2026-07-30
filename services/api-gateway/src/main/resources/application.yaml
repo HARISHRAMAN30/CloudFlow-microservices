@@ -15,3 +15,25 @@ cloudflow:
       - /actuator/**
       - /swagger-ui/**
       - /v3/api-docs/**
+
+  security:
+      enabled: true
+      authentication-enabled: true
+      csrf-enabled: false
+      cors-enabled: true
+      stateless: true
+      public-urls:
+        - /actuator/health
+        - /swagger-ui/**
+        - /v3/api-docs/**
+        - /auth/login
+        - /auth/refresh
+        - /test/public
+        - /jwt/**
+
+  jwt:
+    enabled: true
+    issuer: cloudflow
+    secret: VGhpc0lzQVN1cGVyU2VjcmV0S2V5Rm9ySldUU2lnbmluZzEyMzQ1Njc4OTA=
+    access-token-expiration: 3600000
+    refresh-token-expiration: 604800000

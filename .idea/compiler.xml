@@ -7,7 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cloudflow-common" />
+        <module name="cloudflow-security-starter" />
         <module name="cloudflow-web-starter" />
+        <module name="cloudflow-jwt-starter" />
       </profile>
       <profile name="Annotation profile for CloudFlow Platform" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -25,6 +27,8 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway" options="-parameters" />
       <module name="cloudflow-common" options="-parameters" />
+      <module name="cloudflow-jwt-starter" options="-parameters" />
+      <module name="cloudflow-security-starter" options="-parameters" />
       <module name="cloudflow-web-starter" options="-parameters" />
     </option>
   </component>

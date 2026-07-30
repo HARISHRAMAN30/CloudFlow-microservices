@@ -26,6 +26,9 @@
 	<modules>
 		<module>shared/cloudflow-common</module>
 		<module>shared/cloudflow-web-starter</module>
+		<module>shared/cloudflow-security-starter</module>
+		<module>shared/cloudflow-jwt-starter</module>
+
 		<module>services/api-gateway</module>
 	</modules>
 

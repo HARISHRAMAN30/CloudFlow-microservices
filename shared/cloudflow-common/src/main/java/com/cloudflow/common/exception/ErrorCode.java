@@ -19,9 +19,11 @@ public enum ErrorCode {
     // Authentication
     // ==========================
 
-    INVALID_CREDENTIALS(401, "AUTH-4010", "Invalid username or password"),
+    INVALID_CREDENTIALS(401, "AUTH-4013", "Invalid username or password"),
 
     INVALID_TOKEN(401, "AUTH-4011", "Invalid JWT token"),
+
+    UNAUTHORIZED(401, "AUTH-4010", "Authentication required"),
 
     TOKEN_EXPIRED(401, "AUTH-4012", "JWT token expired"),
 
